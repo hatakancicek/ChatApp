@@ -32,13 +32,13 @@ const style = StyleSheet.create({
     }
   });
 
-export default ({ text, isTop }) =>
+export default ({ text, isTop, ...props }) =>
     <View style={{
         ...style.wrapper,
         paddingTop: isTop ? 20 : 10,
         paddingBottom: isTop ? 10 : 20,
     }} >
-    <TouchableOpacity style={style.button} >
+    <TouchableOpacity {...props} style={style.button} >
       <Text style={style.text} >{text}</Text>
     </TouchableOpacity>   
   </View>
